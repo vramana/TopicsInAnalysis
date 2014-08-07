@@ -1,0 +1,68 @@
+\section{Isoperimetric Inequalities}
+
+
+\textbf{Wiestrass Theorem} :
+
+\vspace{0.1in}
+
+\noindent (\textit{Real Analysis}) If $f: [0,1] \rightarrow \mathbb{R}$ is a continuous function and $\epsilon > 0$ then $\exists$ a polynomial $P$ such that  $\vert f(x)-P(x) \vert < \epsilon$,  whenever $x \in [0,1] $.
+
+\vspace{0.1in}
+
+\noindent (\textit{Functional Analysis}) Let $C[0,1] = \{ f: [0,1] \rightarrow \mathbb{R} \ \vert \ f \ \textrm{is cts} \}$ and
+$d(f,g) = \sup\limits_{x \in [0,1]} \vert f(x) - g(x) \vert $ be the metric. If $P$ = set of all polynomials, then
+$P$ is dense in $C[0,1]$.
+
+\vspace{0.1in}
+
+\noindent \textbf{Proof}:
+
+Let $f: [0,1] \rightarrow \mathbb{R}$ is continuous and $P_n(x) = \sum\limits_{k=0}^{n} \binom{n}{k}\ x^k (1-x)^{n-k}\ f\left(\frac{k}{n}\right)$ for $n \geq 1$.
+
+\vspace{0.1in}
+
+
+\noindent Consider $P_{n,x}(k) = \binom{n}{k}\ x^k(1-x)^{n-k}$, this satisfies
+
+\begin{equation*}
+    P_{n,x}(k) \geq 0  \quad \quad \quad \quad  \sum\limits_{k=0}^{n} P_{n,x}(k)  = 1   \quad \quad \quad \quad
+    \sum\limits_{k=0}^{n} \frac{k}{n} P_{n,x} (k) = x
+\end{equation*}
+
+
+\begin{equation*}
+    \sum\limits_{k=0}^{n} \left( \frac{k}{n} -x\right)^2  P_{n,x} (k) = \frac{x(1-x)}{n} \leq \frac{1}{4n}
+\end{equation*}
+
+\noindent For any $x \in [0,1] $ and consider,
+
+\begin{align*}
+\vert f(x) - P_n(x)\ \  & = \ \  \left\lvert \sum\limits_{k=0}^{n} \ P_{n,x}(k) \ \left[ f(x) - f\left(  \frac{k}{n} \right) \right] \right\rvert \\
+                    & \leq \ \  \sum\limits_{k=0}^{n} \ P_{n,x}(k) \  \left\lvert f(x) - f\left( \frac{k}{n} \right) \right\rvert \\
+                    & \leq \ \  \sum\limits_{k: \vert \frac{k}{n} - x\vert \leq \delta}P_{n,x}(k)  \left\lvert f(x) - f\left(  \frac{k}{n}
+                    \right) \right\rvert \  + \sum\limits_{k: \vert \frac{k}{n} - x\vert > \delta} P_{n,x}(k)  \left\lvert f(x) - f\left(  \frac{k}{n} \right) \right\rvert \\
+                    & \leq \ \  \omega_{f}(\delta) \sum\limits_{k: \vert \frac{k}{n} - x\vert \leq \delta}P_{n,x}(k) \ +  \ 2 \lVert f \rVert_{\sup} \sum\limits_{k: \vert \frac{k}{n} - x\vert > \delta} P_{n,x}(k)
+\end{align*}
+
+\noindent But we can also observe that,
+
+\setlength{\belowdisplayskip}{0pt} \setlength{\belowdisplayshortskip}{0pt}
+\setlength{\abovedisplayskip}{0pt} \setlength{\abovedisplayshortskip}{0pt}
+
+\begin{align*}
+1^{st} \textrm{ term} \ \ & \leq  \ \ \omega_{f}(\delta)   & \left[ \ \because \sum\limits_{k=0}{n} P_{n,x} (k)  = 1 \right] \\
+2^{nd} \textrm{ term}\ \  & \leq  \ \ \frac{2}{\delta^2}\lVert f \rVert_{\sup} \sum\limits_{k: \vert \frac{k}{n} - x\vert > \delta}
+                                \left( \frac{k}{n} - x \right) P_{n,x}(k) \ \ \leq \ \ \frac{1}{2\delta^2 n} \lVert f \rvert_{\sup} \quad \quad & \left[\ \because \textrm{Chebyshev's Inequality} \right]
+\end{align*}
+
+\vspace{0.1in}
+
+\noindent For a given $\epsilon > 0$, choose $\delta > 0$ such that $\omega_{f}(\delta) < \epsilon / 2$  and  pick $n$ large such  that $ \displaystyle\frac{1}{2\delta^2 n} \lVert f \rVert_{sup} < \epsilon / 2 $. \qed
+
+\vspace{0.2in}
+
+\noindent \textbf{Feyer's Theorem}:
+
+\vspace{0.1in}
+
+The set of all trignometric polynomials is dense in $C(S^1)$.
